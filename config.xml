@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<widget xmlns		= "http://www.w3.org/ns/widgets"
+			xmlns:gap	= "http://phonegap.com/ns/1.0"
+			id			= "mx.italiana.MarcarUnidades"
+			versionCode	= "1"
+			version		= "1.0.0" >
+		<name>
+			ItaMarcarUnidadesV1
+		</name>
+		<description>
+			Grupo Industrial La Italiana
+		</description>
+		<author href="www.laitaliana.com.mx" email="luis_martinez@laitaliana.com.mx">
+			Pinky
+		</author>
+		<!--<preference name="phonegap-version" value="3.7.0" />-->
+		 <preference name="phonegap-version" value="cli-6.5.0" />
+        <icon src="icon.png" />
+		
+
+		<preference name="orientation" value="portrait"></preference>		
+
+		<!--<gap:plugin name="org.apache.cordova.vibration"></gap:plugin>-->
+		<!--<gap:plugin name="org.apache.cordova.device"></gap:plugin>-->
+		<!--<gap:plugin name="com.phonegap.plugins.barcodescanner"></gap:plugin>-->
+		<!--<gap:plugin name="org.apache.cordova.network-information" />-->
+		<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+		<gap:plugin name="cordova-plugin-dialogs" source="npm" />
+		<gap:plugin name="cordova-plugin-vibration" source="npm" />
+		<gap:plugin name="cordova-plugin-network-information" source="npm" />
+	    <access origin="*" />
+        <allow-intent href="*" />
+        <allow-navigation href="*" />
+	</widget>

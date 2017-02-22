@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ItaMarcarReportadoV1</title>
+		<meta charset="utf-8">		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+<div data-role="page" id="login">
+<div data-role="header"><h2>ItaMarcarReportadoV1</h2></div> 
+<div data-role="main" class="ui-content">
+<div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+</div>
+<h3>Autentificación:</h3>
+                                <table>
+                                <tr>
+                                    <td>Usuario:</td>
+                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Contraseña:</td>
+                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Contraseña" value=""></td>
+                                </tr>
+									<tr>
+									<td>Opcion:</td>
+										<td><select name="tipoopcion"><option></option><option value="MC">Marcar Cubo</option><option value="MOC">Marcar OC</option></select></td>
+									</tr>
+                                 <tr>       
+                                    <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar"></td>
+                                </tr>                                
+                                </table>
+   </div>
+   <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2016 PK</span></div>
+ <!--<div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a class="ui-btn ui-icon-grid ui-btn-icon-top" href="#MenuCatalogos">Actualizar Catálogos</a></li>                                    
+                                </ul>
+                            </div>
+                       </div>-->
+</div>
+<div data-role="page" id="IngresoCubo">
+    <!--<div data-role="header">
+    </div>-->
+    <div data-role="main" class="ui-content">
+    <h2 id="lblorigenactual" class="Cconsulta"></h2>
+    <div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+</div>
+                                <div class="Cconsulta">
+                                <h3>Ingrese el folio del CUBO a marcar como reportado en vigilancia:</h3>
+                                </div>
+                                <div class="centrado">
+                                <input type="number" class="entrada_texto" id="txtcubo" placeholder="Folio del CUBO" value="">
+                                </div>
+                               
+                                
+<br>
+
+                                <input type="submit" value="Consultar CUBO para marcar como reportado en vigilancia" id="ConsultarCUBO">
+
+                                
+                                
+        
+
+    </div>
+     <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a class="ui-btn ui-icon-home ui-btn-icon-top" id="CerrarSesion" href="#"><br>CERRAR SESION</a></li>
+                                     <li><a class="ui-btn ui-icon-search ui-btn-icon-top" id="ConsultarAlmacenesXCUBO" href="#MuestraAlmacensProgramadosPorCubo">Consultar almacenes<br>programados por cubo</a></li>                                    
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+</div>
+
+<div data-role="page" id="MenuCatalogos">
+<div data-role="header"><h2>ItaMarcarReportadoV1</h2></div>
+<div data-role="main" class="ui-content">
+    <div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+    </div>
+
+<div>
+    <ul  data-role="listview" data-inset="true">
+      <li>
+        <a href="#" id="ConsultaNumUsuarios"><img class="imaicono" src="Imagenes\users.png">Actualizar Catálogo de Usuarios</a>
+      </li>
+     
+    </ul>
+</div>
+</div>
+<div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#login" class="ui-btn ui-icon-arrow-l ui-btn-icon-top">Atrás</a></li>
+                                               
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+</div>
+
+<div data-role="page" id="MuestraInfoCubo">
+    <div data-role="header"><h2>Marcar<br>Reportado</h2></div>
+    <div data-role="main" class="ui-content">
+    <div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+    </div>
+    
+        <h4>Folio del CUBO: <span class="Informacion resaltar05" id="hFOLIOCUBO"></span></h4>
+        <h4>Origen actual del usuario: <span class="Informacion resaltar05" id="hORIGENUSUARIO"></span></h4>
+        <h4>Proveedor: <span class="Informacion resaltar05" id="hNPROVEEDOR"></span></h4>                                      
+        <h4>Placa: <span class="Informacion resaltar05" id="hPLACA"></span></h4>
+        <h4>Descripción del CUBO: <span class="Informacion resaltar05" id="hDESCRIPCIONCUBO"></span></h4>
+        <h4>Almacén programado:</h4>
+<div class="resaltar">
+<span class="Informacion" id="btnMARCAR_PK"></span>
+</div>
+        <!--<input type="submit" value="" id="btnMARCAR_PK">-->
+
+    </div>
+    <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#IngresoCubo" class="ui-btn ui-icon-delete ui-btn-icon-top" id="btnabortar" ><br>Abortar</a></li>
+                                     <li><a href="#" class="parpadea ui-btn ui-icon-alert ui-btn-icon-top" id="MARCAR">Marcar como reportado<br>en vigilancia</a></li>
+                                               
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+</div>
+<div data-role="page" id="MuestraAlmacensProgramadosPorCubo">
+    <div data-role="header"><h3>Consultar los almacenes<br>programados por CUBO</h3></div>
+    <div data-role="main" class="ui-content">
+    <div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+    </div>
+                                <div class="Cconsulta">
+                                <h3>Ingrese el folio del CUBO:</h3>
+                                </div>
+                                <div class="centrado">
+                                <input type="number" class="entrada_texto" id="txtcuboC" placeholder="Folio del CUBO" value="">
+                                </div>
+                               
+                                
+<br>
+
+                                <input type="submit" value="Consultar CUBO para ver los almacenes programados" id="ConsultarCUBOC">
+
+        <h4>Status del cubo : <span class="Informacion resaltar05" id="hCSTATUS"></span></h4>
+        <h4>Origen actual del usuario: <span class="Informacion resaltar05" id="hCORIGENUSUARIO"></span></h4>
+        <h4>Proveedor: <span class="Informacion resaltar05" id="hCNPROVEEDOR"></span></h4>                                      
+        <h4>Placa: <span class="Informacion resaltar05" id="hCPLACA"></span></h4>
+        <h4>Descripción del CUBO: <span class="Informacion resaltar05" id="hCDESCRIPCIONCUBO"></span></h4>
+        <h4>Almacenes programados y fecha de reporte vigilancia:</h4>
+<div class="resaltar2">
+<span class="Informacion" id="btnCMARCAR_PK"></span>
+</div>
+        <!--<input type="submit" value="" id="btnMARCAR_PK">-->
+
+    </div>
+    <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#IngresoCubo" class="ui-btn ui-icon-delete ui-btn-icon-top" id="btnAtrasConsulta">Atras</a></li>                                                                           
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+</div>
+
+<div data-role="page" id="RemotaALocal">
+                 <div data-role="header"><h1>ItaMarcarReportadoV1</h1></div>
+                 <div data-role="main" class="ui-content">
+               <table>
+                 <tr>
+                 <td>Usuarios:</td>
+                 <td>
+                   <input type="text" placeholder="Registrados localmente" id="NumUsuarios" readonly> 
+                 </td>
+                 </tr>
+                  <tr>                 
+                 <td colspan="2">
+                   <input type="submit" value="Remoto > Local" id="btnMigrarUsuarios">
+                 </td>
+                 </tr>
+                 <tr>                 
+                 <td colspan="2">
+                   <input type="submit" value="Eliminar Local" id="btnEliminarUsuarios">
+                 </td>
+                 </tr>
+               </table>
+
+                 </div>
+                 <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#MenuCatalogos" class="ui-btn ui-icon-arrow-l ui-btn-icon-top">Atrás</a></li>
+                                               
+                                </ul>
+                            </div><!-- /navbar -->
+                       </div>
+            </div>
+
+
+
+        <script src="phonegap.js"></script>
+        <script src="js/jquery-1.12.2.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/actions.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/almacenamiento.js"></script>
+    <!--<script src="js/servidor.js"></script>-->
+</body>
+
+</html>
