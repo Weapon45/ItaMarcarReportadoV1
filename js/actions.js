@@ -251,7 +251,7 @@ window.location.href = '#login';
         var usu = $('#txtusuario').val();      
         var con = $('#txtcontrasena').val(); 
 		var tip = $('#txtTipo').val();
-        if((usu != '') && (con != '') && (tip != 'X')){  
+        if((usu != '') && (con != '') && (tip != '')){  
             $.mobile.loading("show",{theme: 'b'});
             almacen.leerinformacionUsuario();
             $.mobile.loading("hide");
