@@ -116,12 +116,16 @@ var almacen = {
 	else if(encontroUsuario >= 1)
 	{
 		var t = $('#txtTipo').val();
-		navigator.notification.alert(t,null,"Advertencia","aceptar");
-		window.localStorage.setItem("user",usuariof);
+		if(t == "MC"){
+			window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
 		$("#txtcubo").val("");
  		window.location.href = '#IngresoCubo';
+		}
+		else{
+			window.location.href = '#OC';
+		}	
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
 										});
