@@ -5,48 +5,58 @@
 		<meta charset="utf-8">		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+		<link href="css/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css">
+		<link href="css/jquery-hojacarga.css" rel="stylesheet" type="text/css">
+		<link href="css/jquery-hojacarga.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
 <div data-role="page" id="login">
 <div data-role="header"><h2>ItaMarcarReportadoV1</h2></div> 
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+			<li data-role="list-divider">
+				<center>
+					MARCAR REPORTE PT/OC V2.0
+				</center>
+			</li>
+		</ul>
+	</div>
 <div data-role="main" class="ui-content">
 <div id="imagenita">
     <img src="Imagenes\01.jpg" width=70px>
 </div>
-<h3>Autentificación:</h3>
-                                <table>
-                                <tr>
-                                    <td>Usuario:</td>
-                                    <td><input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value=""></td>
-                                </tr>
-                                <tr>
-                                    <td>Contraseña:</td>
-                                    <td><input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Contraseña" value=""></td>
-                                </tr>
-									<tr>
-									<td>Opcion:</td>
-										<td>
-											<select name="tipoopcion" id="txtTipo">
-												<option value="">Tipo Aplicacion</option>
-												<option value="MC">Marcar Cubo</option>
-												<option value="MOC">Marcar OC</option>
-											</select>
-										</td>
-									</tr>
-                                 <tr>       
-                                    <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar"></td>
-                                </tr>                                
-                                </table>
+	<ul data-role="listview" data-inset="true">
+		<li data-role="list-divider">
+			<center>
+				AUTENTIFICACIÓN
+			</center>
+		</li>
+		<li>
+			<input type="text" class="entrada_texto" id="txtusuario" placeholder="Nombre Usuario" value="">
+		</li>
+		<li>
+			<input type="password" class="entrada_texto" id="txtcontrasena" placeholder="Contraseña" value="">
+		</li>
+		<li>
+			<select id="txtTipo">
+				<option value="">Tipo</option>
+				<option value="MC">Marcar Cubo</option>
+				<option value="MOC">Marcar Orden Compra</option>
+			</select>
+		</li>
+		<li>
+			<input type="submit" value="Autentificar" id="btnautentificar">
+		</li>
+	</ul>
    </div>
-   <div data-role="footer" data-position="fixed"><span style="font-size:8pt;">Sistemas 2016 PK</span></div>
- <!--<div data-role="footer" data-position="fixed">
-                            <div data-role="navbar">
-                                <ul>
-                                    <li><a class="ui-btn ui-icon-grid ui-btn-icon-top" href="#MenuCatalogos">Actualizar Catálogos</a></li>                                    
-                                </ul>
-                            </div>
-                       </div>-->
+   <div data-role="footer" data-position="fixed">
+	   <center>
+	   		<span style="font-size:8pt;">
+		   		Copyright &copy; 2017 Grupo Industrial La Italiana
+		   </span>
+	   </center>
+   </div>
 </div>
 	<div data-role="page" id="OC">
 		<div role="main" class="ui-content">
