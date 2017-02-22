@@ -95,7 +95,6 @@ window.location.href = '#login';
 		window.localStorage.setItem("user",'');
 		$("#txtusuario").va("");
 		$("#txtcontrasena").val("");
-		$("#txtTipo").val("");
 		window.location.href = '#login';
 	},
     ConsultarCUBO: function(){    
