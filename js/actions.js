@@ -250,15 +250,16 @@ window.location.href = '#login';
     autentificarSQL: function(){
         var usu = $('#txtusuario').val();      
         var con = $('#txtcontrasena').val(); 
-		var tip = $('select[name=tipoopcion]').val();
-        if((usu != '') || (con != '') || (tip != '')){   
+		var tip = $('#txtTipo').val();
+        if((usu != '') && (con != '') && (tip != 'X')){  
             $.mobile.loading("show",{theme: 'b'});
             almacen.leerinformacionUsuario();
             $.mobile.loading("hide");
         }
-        else{
-            //navigator.notification.alert("Ingrese los datos requeridos",null,"Error al Ingresar","Aceptar");///*PARAMOVIL
-            alert("Ingrese los datos requeridos");///*PARAWEB
+        else
+		{
+            navigator.notification.alert("Ingrese los datos requeridos",null,"Error al Ingresar","Aceptar");///*PARAMOVIL
+            //alert("Ingrese los datos requeridos");///*PARAWEB
         }   
     },
     btnabortar: function(){

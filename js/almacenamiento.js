@@ -115,7 +115,8 @@ var almacen = {
 	}
 	else if(encontroUsuario >= 1)
 	{
-		
+		var t = $('#txtTipo').val();
+		navigator.notification.alert(t,null,"Advertencia","aceptar");
 		window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
