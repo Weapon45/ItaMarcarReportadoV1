@@ -26,7 +26,13 @@
                                 </tr>
 									<tr>
 									<td>Opcion:</td>
-										<td><select name="tipoopcion" id="txtTipo"><option value="X"></option><option value="MC">Marcar Cubo</option><option value="MOC">Marcar OC</option></select></td>
+										<td>
+											<select name="tipoopcion" id="txtTipo">
+												<option value="">Tipo Aplicacion</option>
+												<option value="MC">Marcar Cubo</option>
+												<option value="MOC">Marcar OC</option>
+											</select>
+										</td>
 									</tr>
                                  <tr>       
                                     <td colspan="2"><input type="submit" value="Autentificar" id="btnautentificar"></td>
@@ -43,7 +49,14 @@
                        </div>-->
 </div>
 	<div data-role="page" id="OC">
-		<div data-role="main" class="ui-content">
+		<div role="main" class="ui-content">
+			<ul data-role="lisview" data-inset="true">
+				<li data-role="list-divider">
+					<center>
+						INICIO - FIN RECEPCION
+					</center>
+				</li>
+			</ul>
 		</div>
 	</div>
 <div data-role="page" id="IngresoCubo">
