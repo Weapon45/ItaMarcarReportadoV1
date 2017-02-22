@@ -117,13 +117,16 @@ var almacen = {
 	{
 		var t = $('#txtTipo').val();
 		if(t == "MC"){
-			window.localStorage.setItem("user",usuariof);
+		window.localStorage.setItem("user",usuariof);
 		window.localStorage.setItem("origen",origenf);
 		$("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
 		$("#txtcubo").val("");
  		window.location.href = '#IngresoCubo';
 		}
 		else{
+			window.localStorage.setItem("user",usuariof);
+			window.localStorage.setItem("origen",origenf);
+			$("#lblorigenOC").text("" + window.localStorage.getItem("origen"));
 			window.location.href = '#OC';
 		}	
 	}
