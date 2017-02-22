@@ -27,6 +27,7 @@ var fn = {
         $('#btnautentificar').tap(fn.autentificarSQL);
         ////////////
         $('#CerrarSesion').tap(fn.cerrarsesion);
+		$('#CSOC').tap(fn.cerrarsesionOC);
         $('#ConsultarCUBO').tap(fn.ConsultarCUBO);
         $('#ConsultaNumUsuarios').tap(fn.ConsultaNumUsuarios);
         //$('#btnMigrarUsuarios').tap(fn.btnMigrarUsuarios);
@@ -90,6 +91,13 @@ var fn = {
     $("#txtcontrasena").val("");
 window.location.href = '#login';
     },
+	cerrarsesionOC: function(){
+		window.localStorage.setItem("user",'');
+		$("#txtusuario").va("");
+		$("#txtcontrasena").val("");
+		$("#txtTipo").val("");
+		window.location.href = '#login';
+	},
     ConsultarCUBO: function(){    
 
         var cubo = $('#txtcubo').val();    
