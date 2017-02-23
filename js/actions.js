@@ -90,8 +90,8 @@ var fn = {
 		$("#txtusuario").val("");
 		$("#txtcontrasena").val("");
 		$('#txtTipo').val("");
-		$("#login").load();
-		window.location.href = '#login';
+		window.location.href = '#login'
+		location.reload();
     },	
     ConsultarCUBO: function(){    
 
