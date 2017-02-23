@@ -27,7 +27,7 @@ var fn = {
         $('#btnautentificar').tap(fn.autentificarSQL);
         ////////////
         $('#CerrarSesion').tap(fn.cerrarsesion);
-		$('#CSOC').tap(fn.cerrarsesionOC);
+		$('#CSOC').tap(fn.cerrarsesion);
         $('#ConsultarCUBO').tap(fn.ConsultarCUBO);
         $('#ConsultaNumUsuarios').tap(fn.ConsultaNumUsuarios);
         //$('#btnMigrarUsuarios').tap(fn.btnMigrarUsuarios);
@@ -82,21 +82,15 @@ var fn = {
         }
         else
         {
-            return true;
+            return false;
         }
     },
     cerrarsesion: function(){
     window.localStorage.setItem("user",'');   
     $("#txtusuario").val("");
     $("#txtcontrasena").val("");
-window.location.href = '#login';
-    },
-	cerrarsesionOC: function(){
-		window.localStorage.setItem("user",'');
-		$("#txtusuario").va("");
-		$("#txtcontrasena").val("");
-		window.location.href = '#login';
-	},
+	window.location.href = '#login';
+    },	
     ConsultarCUBO: function(){    
 
         var cubo = $('#txtcubo').val();    
