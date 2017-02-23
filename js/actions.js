@@ -91,7 +91,7 @@ var fn = {
     $("#txtcontrasena").val("");
 	//$("#txtTipo").val("");
 	//$("#txtTipo select").val("");
-	document.getElementById('txtTipo').value = '';
+	document.getElementById('txtTipo').nodeValue = '';
 	window.location.href = '#login';
     },	
     ConsultarCUBO: function(){    
