@@ -89,7 +89,7 @@ var fn = {
 		window.localStorage.setItem("user",'');   
 		$("#txtusuario").val("");
 		$("#txtcontrasena").val("");
-		$('#txtTipo option:first');
+		$('#txtTipo').val([]);
 		window.location.href = '#login';
     },	
     ConsultarCUBO: function(){    
