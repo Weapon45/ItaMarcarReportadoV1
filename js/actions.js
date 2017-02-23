@@ -98,7 +98,12 @@ var fn = {
 		var digitado = $('#txtOC').val();
 		var division = digitado.substring(0,2);
 		var OC = digitado.substring(2);
-		alert(division + ' ' + OC);
+		
+		if(division != '' && OC != ''){
+			$.mobile.loading("show",{theme: 'b'});
+		}else{
+			navigator.notification.alert("División y OC son Requeridos",null,"Error al Consulta OC","Aceptar");
+		}
 	},
     ConsultarCUBO: function(){    
 
