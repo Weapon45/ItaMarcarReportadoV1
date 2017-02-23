@@ -113,6 +113,7 @@ var fn = {
 						if(msg[i].RESPUESTA == 'CORRECTO'){
 							//alert(msg[i].OC + ' ' + msg[i].DIVISION + ' ' + msg[i].NUMPROV + ' ' + msg[i].NOMPROV + ' ' + msg[i].IMPORTE + ' ' + msg[i].ALMACEN);
 							var tabla = '<li data-role="list-divider"><center><h1>DATOS ORDEN COMPRA<h1></center></li>';
+							tabla += '<li><ul><li>' + msg[i].OC + '</li><li>' + msg[i].DIVISION + '</li></ul></li>'
 							$("#dat").html(tabla);
 							window.location.href = '#Info'
 						}
