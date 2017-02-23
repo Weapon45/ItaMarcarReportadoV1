@@ -98,11 +98,33 @@ var fn = {
 		var digitado = $('#txtOC').val();
 		var division = digitado.substring(0,2);
 		var OC = digitado.substring(2);
+		var origen = window.localStorage.getItem("origen");
 		
 		if(division != '' && OC != ''){
 			$.mobile.loading("show",{theme: 'b'});
+			$.ajax({
+				method: 'POST',
+				url: 'http://servidoriis.laitaliana.com.mx/PO/WebServices/OC/OC.asmx/ocs',
+				data: {OC: OC, Division: division, Usuario: origen},
+				dataType: "json",
+				success: function (msg){
+					$.mobile.loading("hide");
+					$.each(msg, function(i,item){
+						if(msg[i].RESPUESTA == 'CORRECTO'){
+							alert(msg[i].OC + ' ' + msg[i].DIVISION + msg[i].NUMPROV + ' ' + msg[i].NOMPROV + ' ' + msg[i].IMPORTE + ' ' + msg[i].ALMACEN);
+						}
+						else{
+							alert("INCORRECTO");
+						}
+					});
+				},
+				error: function(jq, txt){
+					$.mobile.loading("hide");
+					navigator.notification.alert("Verifique su conexion de Datos ó Wifi " + jq + " " + txt.responseText,null,"Error al Consultar OC","Aceptar");
+				}
+			});
 		}else{
-			navigator.notification.alert("División y OC son Requeridos",null,"Error al Consulta OC","Aceptar");
+			navigator.notification.alert("División y OC son Requeridos",null,"Error al Consultar OC","Aceptar");
 		}
 	},
     ConsultarCUBO: function(){    
