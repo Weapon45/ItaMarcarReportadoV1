@@ -29,6 +29,7 @@ var fn = {
         $('#CerrarSesion').tap(fn.cerrarsesion);
 		$('#CSOC').tap(fn.cerrarsesion);
         $('#ConsultarCUBO').tap(fn.ConsultarCUBO);
+		$('#ConsultarOC').tap(fn.ConsultarOrdenCompra);
         $('#ConsultaNumUsuarios').tap(fn.ConsultaNumUsuarios);
         //$('#btnMigrarUsuarios').tap(fn.btnMigrarUsuarios);
         $('#btnEliminarUsuarios').tap(fn.btnEliminarUsuarios);
@@ -93,6 +94,12 @@ var fn = {
 		window.location.href = '#login'
 		location.reload();
     },	
+	ConsultarOrdenCompra: function(){
+		var digitado = $('#txtOC').val();
+		var division = digitado.substring(0,2);
+		var OC = digitado.substring(3);
+		alert(division + ' ' + OC);
+	},
     ConsultarCUBO: function(){    
 
         var cubo = $('#txtcubo').val();    
