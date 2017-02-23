@@ -112,7 +112,7 @@ var fn = {
 					$.each(msg, function(i,item){
 						if(msg[i].RESPUESTA == 'CORRECTO'){
 							//alert(msg[i].OC + ' ' + msg[i].DIVISION + ' ' + msg[i].NUMPROV + ' ' + msg[i].NOMPROV + ' ' + msg[i].IMPORTE + ' ' + msg[i].ALMACEN);
-							var tabla = '<form><ul data-role="listview" data-inset="true"><li class="ui-field-contain"><label>DIVISION: </label><label>' + msg[i].DIVISION + '</label></li></ul></form>'
+							var tabla = '<form><ul data-role="listview" data-inset="true"><li class="ui-field-contain"><label for="div">DIVISION: </label><label name="div" id="div">' + msg[i].DIVISION + '</label></li></ul></form>'
 							$("#dat").html(tabla);
 							window.location.href = '#Info'
 						}
