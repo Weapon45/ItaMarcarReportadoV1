@@ -86,13 +86,11 @@ var fn = {
         }
     },
     cerrarsesion: function(){
-    window.localStorage.setItem("user",'');   
-    $("#txtusuario").val("");
-    $("#txtcontrasena").val("");
-	//$("#txtTipo").val("");
-	//$("#txtTipo select").val("");
-	document.getElementById('txtTipo').optios[0].selected = true;
-	window.location.href = '#login';
+		window.localStorage.setItem("user",'');   
+		$("#txtusuario").val("");
+		$("#txtcontrasena").val("");
+		$("#txtTipo").slider("refresh");
+		window.location.href = '#login';
     },	
     ConsultarCUBO: function(){    
 
