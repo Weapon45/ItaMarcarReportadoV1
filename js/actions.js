@@ -97,7 +97,7 @@ var fn = {
 	ConsultarOrdenCompra: function(){
 		var digitado = $('#txtOC').val();
 		var division = digitado.substring(0,2);
-		var OC = digitado.substring(3);
+		var OC = digitado.substring(2);
 		alert(division + ' ' + OC);
 	},
     ConsultarCUBO: function(){    
