@@ -97,11 +97,42 @@
 		</div>
 	</div>
 	<div data-role="page" id="Info">
-		<br>
-		<div role="main" class="ui-content">
-			<ul data-role="listview" data-inset="true" id="dat">
+		<div data-role="header">					
+			<center>
 				<br>
-			</ul>
+				INICIO - FIN RECEPCION	
+			</center>
+			<br>
+		</div>
+		<div role="main" class="ui-content">
+			<div id="imagenita">
+				<img src="Imagenes/01.jpg" width="70px">
+			</div>
+			<h4>División:    <span class="Informacion resaltar05" id="doc"></span></h4>
+			<h4>Folio OC:    <span class="Informacion resaltar05" id="foc"></span></h4>
+			<h4>Num Prov:	 <span class="Informacion resaltar05" id="nump"></span></h4>
+			<h4>Nom Prov:	 <span class="Informacion resaltar05" id="nomp"></span></h4>
+			<h4>Importe:	 <span class="Informacion resaltar05" id="ioc"></span></h4>
+			<br>
+			<h4>Almacén Programado Recepción:</h4>
+			<h4 class="Informacion resaltar05" id="aoc"></h4>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li>
+						<a href="#OC" class="ui-btn ui-icon-delete ui-btn-icon-top" id="btnCancelar">
+							<br>
+							Cancelar
+						</a>
+					</li>
+					<li>
+						<a href="#" class="parpadea ui-btn ui-icon-alert ui-btn-icon-top" id="ReportarMarca">
+							Marcar como reportado<br>en vigilancia
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 <div data-role="page" id="IngresoCubo">
