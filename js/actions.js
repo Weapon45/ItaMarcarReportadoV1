@@ -38,10 +38,8 @@ var fn = {
         $('#ConsultarCUBOC').tap(fn.ConsultarCUBOC);
         $('#ConsultarAlmacenesXCUBO').tap(fn.ConsultarAlmacenesXCUBO);
         $('#MARCAR').tap(fn.MARCAR);
-		$("#MarcaOC").tap(fn.MarcarOC);
+		$("#MarcaOC").tap(fn.MarcarOC);       
         
-        
-
         //PARA MOVIL
         document.addEventListener("online", fn.btnMigrarUsuarios(), false);
         ////////////
@@ -329,7 +327,53 @@ var fn = {
 		var OrdenC = $('#foc').text();
 		var Div = $("#doc").text();
 		var usuario = window.localStorage.getItem("user");
-		alert(OrdenC + ' ' + Div + ' ' + usuario);
+		
+		$.mobile.loading("show",{theme: 'b'});
+		$.ajax({
+			method: 'POST',
+			url: 'http://servidoriis.laitaliana.com.mx/PO/WebServices/OC/OC.asmx/marcaOC',
+			data: {OC: OrdenC, Division: Div, Usuario: usuario},
+			dataType: "json",
+			success: function(msg){
+				$.mobile.loading("hide");
+				$.each(msg, function(i,item){
+					if(msg[i].RESPUESTA == "CORRECTO"){
+						$("#doc").text("");
+						$("#foc").text("");
+						$("#nump").text("");
+						$("#nomp").text("");
+						$("#ioc").text("");
+						$("#aoc").text("");
+						$("#txtOC").val("");
+						window.location.href = '#OC';
+						navigator.notification.alert("Se registro de forma Correcta.",null,"Correcto","Aceptar");
+					}else if(msg[i].RESPUESTA == "INCORRECTO1"){
+						$("#doc").text("");
+						$("#foc").text("");
+						$("#nump").text("");
+						$("#nomp").text("");
+						$("#ioc").text("");
+						$("#aoc").text("");
+						$("#txtOC").val("");
+						window.location.href = '#OC';
+						navigator.notification.alert("Se se tiene informacion de registro para esta OC.",null,"Incorrecto","Aceptar");
+					}else if(msg[i].RESPUESTA == "INCORRECTO2"){
+						$("#doc").text("");
+						$("#foc").text("");
+						$("#nump").text("");
+						$("#nomp").text("");
+						$("#ioc").text("");
+						$("#aoc").text("");
+						$("#txtOC").val("");
+						window.location.href = '#OC';
+						navigator.notification.alert("Ocurrio algun Error en Web Services, Verifique con Sistemas.",null,"Incorrecto","Aceptar");
+					}
+				});
+			},
+			error: function(jq,txt){
+				navigator.notification.alert("Error al intentar marcar verifique su cobertura ó contacte a sistemas " + jq + ' ' + txt.responseText,null,"Error al Marcar Verifique su cobertura","Aceptar");
+			}
+		});
 	},
     MARCAR: function(){
 
