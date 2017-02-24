@@ -38,6 +38,7 @@ var fn = {
         $('#ConsultarCUBOC').tap(fn.ConsultarCUBOC);
         $('#ConsultarAlmacenesXCUBO').tap(fn.ConsultarAlmacenesXCUBO);
         $('#MARCAR').tap(fn.MARCAR);
+		$("#MarcaOC").tap(fn.MarcarOC);
         
         
 
