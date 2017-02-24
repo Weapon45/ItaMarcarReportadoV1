@@ -34,6 +34,7 @@ var fn = {
         //$('#btnMigrarUsuarios').tap(fn.btnMigrarUsuarios);
         $('#btnEliminarUsuarios').tap(fn.btnEliminarUsuarios);
         $('#btnabortar').tap(fn.btnabortar);
+		$('#btnCancelar').tap(fn.btnCancelar);
         $('#ConsultarCUBOC').tap(fn.ConsultarCUBOC);
         $('#ConsultarAlmacenesXCUBO').tap(fn.ConsultarAlmacenesXCUBO);
         $('#MARCAR').tap(fn.MARCAR);
@@ -311,6 +312,9 @@ var fn = {
     btnabortar: function(){
         $("#txtcubo").val("");
     },
+	btnCancelar: function(){
+		$("#txtOC").val("");	
+	},
     ConsultarAlmacenesXCUBO: function(){
          $("#hCSTATUS").text("");
           $("#hCORIGENUSUARIO").text("");
