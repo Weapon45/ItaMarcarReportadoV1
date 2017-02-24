@@ -324,6 +324,12 @@ var fn = {
              $("#btnCMARCAR_PK").text("");
              $("#txtcuboC").val("");
     },
+	MarcarOC: function(){
+		var OrdenC = $('#foc').text();
+		var Div = $("#doc").text();
+		var usuario = window.localStorage.getItem("user");
+		alert(OrdenC + ' ' + Div + ' ' + usuario);
+	},
     MARCAR: function(){
 
         var cubo = $('#hFOLIOCUBO').text();  
