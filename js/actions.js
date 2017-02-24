@@ -119,10 +119,12 @@ var fn = {
 							$("#ioc").text(msg[i].IMPORTE);
 							$("#aoc").text(msg[i].ALMACEN);
 							window.location.href = '#Info'
+						}else if(msg[i].RESPUESTA == 'INCORRECTO1'){
+							navigator.notification.alert("Almacen de Orden de Compra, no Requiere Reporte Vigilancia, se aborta la operación.",null,"Status de OC incorrecto.","Aceptar");
+						}else if(msg[i].RESPUESTA == 'INCORRECTO2'){
+							navigator.notification.alert("EL STATUS de Orden de Compra no es Vigilancia, se aborta la operación.",null,"Status de OC incorrecto.","Aceptar");
 						}
-						else{
-							alert("INCORRECTO");
-						}
+						
 					});
 				},
 				error: function(jq, txt){
