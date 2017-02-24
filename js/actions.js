@@ -124,7 +124,7 @@ var fn = {
 						}else if(msg[i].RESPUESTA == 'INCORRECTO2'){
 							navigator.notification.alert("EL STATUS de Orden de Compra no es Vigilancia, se aborta la operación.",null,"Status de OC incorrecto.","Aceptar");
 						}else if(msg[i].RESPUESTA == 'INCORRECTO3'){
-							navigato.notification.alert("Orden de Compra Culminada en Proceso de Inicio - Fin Recepcion.",null,"Status de OC Correcto","Aceptar");
+							navigator.notification.alert("Orden de Compra Culminada en Proceso de Inicio - Fin Recepcion.",null,"Status de OC Correcto","Aceptar");
 						}
 						
 					});
